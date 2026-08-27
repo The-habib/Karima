@@ -1,0 +1,16 @@
+{
+  "short_name": "Karima",
+  "name": "Karima | Happy Birthday Fultusi",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#CCFF00",
+  "theme_color": "#CCFF00",
+  "display": "standalone"
+}

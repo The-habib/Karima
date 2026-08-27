@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import Sticker from "./Sticker";
 import Marquee from "./Marquee";
-import { Sparkles, Heart, Crown, Star, Eye, X } from "lucide-react";
+import { Heart, Crown, Eye, X } from "lucide-react";
 import PowButton from "./PowButton";
 import { playSparkleChime } from "@/lib/soundEffects";
 
 const PHOTOS = [
-  "/favicon.jpg",
   "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/39c8ab633_Picsart_26-08-28_02-18-53-102.jpg",
   "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/e4e30c706_Picsart_26-08-28_02-18-20-048.jpg",
   "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/6c68a2051_Picsart_26-08-28_02-17-59-854.jpg",
@@ -122,68 +121,57 @@ export default function Hero({ replayKey }) {
         </motion.div>
 
         {/* Big photo showcase */}
-        <div className="relative z-10 mt-8 w-full">
-          {/* Desktop: large scattered stickers */}
-          <div className="relative hidden sm:block mx-auto h-[32rem] max-w-3xl">
+        <div className="relative z-10 mt-10 w-full">
+          {/* Desktop: original 4 scattered stickers */}
+          <div className="relative hidden sm:block mx-auto h-[30rem] max-w-2xl">
             <div onClick={() => setSelectedPhoto(PHOTOS[0])} className="cursor-pointer">
               <Sticker
                 src={PHOTOS[0]}
-                rotate={-6}
-                delay={0.1}
+                rotate={-8}
+                delay={0.15}
                 replayKey={replayKey}
-                className="left-4 top-2 w-52 h-68 z-20 hover:scale-105 hover:z-40 transition-transform"
+                className="left-0 top-0 w-44 h-60 hover:scale-105 transition-transform"
               />
             </div>
             <div onClick={() => setSelectedPhoto(PHOTOS[1])} className="cursor-pointer">
               <Sticker
                 src={PHOTOS[1]}
-                rotate={8}
-                delay={0.2}
+                rotate={9}
+                delay={0.3}
                 replayKey={replayKey}
-                className="right-6 top-4 w-44 h-56 z-10 hover:scale-105 hover:z-40 transition-transform"
+                className="right-0 top-4 w-44 h-56 hover:scale-105 transition-transform"
               />
             </div>
             <div onClick={() => setSelectedPhoto(PHOTOS[2])} className="cursor-pointer">
               <Sticker
                 src={PHOTOS[2]}
-                rotate={-10}
-                delay={0.35}
+                rotate={6}
+                delay={0.45}
                 replayKey={replayKey}
-                className="left-1/3 top-10 w-46 h-58 z-30 hover:scale-105 hover:z-40 transition-transform"
+                className="left-8 bottom-0 w-40 h-52 hover:scale-105 transition-transform"
               />
             </div>
             <div onClick={() => setSelectedPhoto(PHOTOS[3])} className="cursor-pointer">
               <Sticker
                 src={PHOTOS[3]}
-                rotate={5}
-                delay={0.5}
+                rotate={-11}
+                delay={0.6}
                 replayKey={replayKey}
-                className="left-10 bottom-2 w-44 h-52 z-10 hover:scale-105 hover:z-40 transition-transform"
-              />
-            </div>
-            <div onClick={() => setSelectedPhoto(PHOTOS[4])} className="cursor-pointer">
-              <Sticker
-                src={PHOTOS[4]}
-                rotate={-8}
-                delay={0.65}
-                replayKey={replayKey}
-                className="right-12 bottom-4 w-50 h-46 z-20 hover:scale-105 hover:z-40 transition-transform"
+                className="right-8 bottom-6 w-48 h-40 hover:scale-105 transition-transform"
               />
             </div>
           </div>
 
-          {/* Mobile: photo grid with tap to expand */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:hidden w-full">
+          {/* Mobile: original 2x2 grid */}
+          <div className="grid grid-cols-2 gap-4 sm:hidden w-full">
             {PHOTOS.map((p, i) => (
               <motion.div
                 key={i}
-                initial={{ scale: 0, rotate: i % 2 ? 4 : -4, opacity: 0 }}
-                animate={{ scale: 1, rotate: i % 2 ? 4 : -4, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 200, damping: 12, delay: 0.08 * i }}
+                initial={{ scale: 0, rotate: i % 2 ? 5 : -5, opacity: 0 }}
+                animate={{ scale: 1, rotate: i % 2 ? 5 : -5, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 12, delay: 0.1 * i }}
                 onClick={() => setSelectedPhoto(p)}
-                className={`relative rounded-[20px] border-4 border-black bg-white p-1.5 shadow-[6px_6px_0_0_#000] cursor-pointer active:scale-95 transition-transform ${
-                  i === 0 ? "col-span-2 aspect-[4/3]" : "aspect-[3/4]"
-                }`}
+                className="relative aspect-[3/4] rounded-[20px] border-4 border-black bg-white p-1.5 shadow-[6px_6px_0_0_#000] cursor-pointer"
               >
                 <img src={p} alt="Karima" className="h-full w-full rounded-[12px] object-cover" />
                 <div className="absolute bottom-2 right-2 bg-black/60 text-white rounded-full p-1">

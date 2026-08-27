@@ -16,9 +16,9 @@ const PHOTO_DETAILS = [
   },
   {
     src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/e4e30c706_Picsart_26-08-28_02-18-20-048.jpg",
-    title: "YOUR RADIANT SMILE 🌸",
-    badge: "PURE RADIANCE",
-    caption: "The gentle, glowing smile that brightens my entire world.",
+    title: "YOUR ICONIC ATTITUDE & VIBE 👑✨",
+    badge: "100% ICONIC",
+    caption: "I truly love your attitude — confident, charming, bold, and unmatched in every single way!",
   },
   {
     src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/6c68a2051_Picsart_26-08-28_02-17-59-854.jpg",

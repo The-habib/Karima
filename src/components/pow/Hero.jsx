@@ -3,15 +3,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import Sticker from "./Sticker";
 import Marquee from "./Marquee";
-import { Heart, Crown, Eye, X, Sparkles, Gift } from "lucide-react";
+import { Heart, Crown, Eye, X, Sparkles, Gift, Flame } from "lucide-react";
 import PowButton from "./PowButton";
 import { playSparkleChime } from "@/lib/soundEffects";
 
-const PHOTOS = [
-  "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/39c8ab633_Picsart_26-08-28_02-18-53-102.jpg",
-  "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/e4e30c706_Picsart_26-08-28_02-18-20-048.jpg",
-  "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/6c68a2051_Picsart_26-08-28_02-17-59-854.jpg",
-  "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/1f18c0b44_IMG_20260828_020612.jpg",
+const PHOTO_DETAILS = [
+  {
+    src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/39c8ab633_Picsart_26-08-28_02-18-53-102.jpg",
+    title: "YOUR INCREDIBLE DRESSING SENSE ✨👗",
+    badge: "100/10 STYLE",
+    caption: "I truly admire your style — you look effortlessly stunning, graceful, and beautiful every single time!",
+  },
+  {
+    src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/e4e30c706_Picsart_26-08-28_02-18-20-048.jpg",
+    title: "YOUR RADIANT SMILE 🌸",
+    badge: "PURE RADIANCE",
+    caption: "The gentle, glowing smile that brightens my entire world.",
+  },
+  {
+    src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/6c68a2051_Picsart_26-08-28_02-17-59-854.jpg",
+    title: "EFFORTLESS ELEGANCE ✨",
+    badge: "GRACE & WARMTH",
+    caption: "Pure grace, warmth, and the kindest soul in the world.",
+  },
+  {
+    src: "https://media.base44.com/images/public/user_6a90a17013211cf162e6d436/1f18c0b44_IMG_20260828_020612.jpg",
+    title: "NATURAL CHARM 💖",
+    badge: "PRECIOUS SOUL",
+    caption: "My absolute favourite person in the entire universe.",
+  },
 ];
 
 export default function Hero({ replayKey }) {
@@ -39,28 +59,37 @@ export default function Hero({ replayKey }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedPhoto(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.8, rotate: -3 }}
               animate={{ scale: 1, rotate: 0 }}
               exit={{ scale: 0.8, rotate: 3 }}
-              className="relative max-w-sm sm:max-w-md rounded-[32px] border-4 border-black bg-white p-3 shadow-[12px_12px_0_0_#000]"
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-sm sm:max-w-md rounded-[32px] border-4 border-black bg-white p-4 shadow-[12px_12px_0_0_#000]"
             >
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute -top-4 -right-4 w-10 h-10 rounded-full border-3 border-black bg-[#FF0099] text-white flex items-center justify-center font-display shadow-[3px_3px_0_0_#000] cursor-pointer"
+                className="absolute -top-3 -right-3 w-10 h-10 rounded-full border-3 border-black bg-[#FF0099] text-white flex items-center justify-center font-display shadow-[3px_3px_0_0_#000] cursor-pointer hover:scale-105"
               >
                 <X className="h-5 w-5" />
               </button>
+              
               <img
-                src={selectedPhoto}
-                alt="Karima"
-                className="w-full h-auto rounded-[20px] object-cover border-2 border-black"
+                src={selectedPhoto.src}
+                alt={selectedPhoto.title}
+                className="w-full h-auto rounded-[20px] object-cover border-3 border-black shadow-[4px_4px_0_0_#000]"
               />
-              <div className="mt-3 text-center py-2">
-                <p className="font-display text-lg text-black">
-                  YOUR BEAUTIFUL SMILE 🌸
+              
+              <div className="mt-4 text-center">
+                <span className="inline-block rounded-full border-2 border-black bg-[#CCFF00] px-3 py-0.5 font-display text-xs text-black shadow-[2px_2px_0_0_#000] mb-2">
+                  {selectedPhoto.badge}
+                </span>
+                <h4 className="font-display text-xl sm:text-2xl text-black leading-tight">
+                  {selectedPhoto.title}
+                </h4>
+                <p className="mt-2 text-sm font-bold text-black/80">
+                  {selectedPhoto.caption}
                 </p>
               </div>
             </motion.div>
@@ -124,36 +153,36 @@ export default function Hero({ replayKey }) {
         <div className="relative z-10 mt-10 w-full">
           {/* Desktop: original 4 scattered stickers */}
           <div className="relative hidden sm:block mx-auto h-[30rem] max-w-2xl">
-            <div onClick={() => setSelectedPhoto(PHOTOS[0])} className="cursor-pointer">
+            <div onClick={() => setSelectedPhoto(PHOTO_DETAILS[0])} className="cursor-pointer">
               <Sticker
-                src={PHOTOS[0]}
+                src={PHOTO_DETAILS[0].src}
                 rotate={-8}
                 delay={0.15}
                 replayKey={replayKey}
                 className="left-0 top-0 w-44 h-60 hover:scale-105 transition-transform"
               />
             </div>
-            <div onClick={() => setSelectedPhoto(PHOTOS[1])} className="cursor-pointer">
+            <div onClick={() => setSelectedPhoto(PHOTO_DETAILS[1])} className="cursor-pointer">
               <Sticker
-                src={PHOTOS[1]}
+                src={PHOTO_DETAILS[1].src}
                 rotate={9}
                 delay={0.3}
                 replayKey={replayKey}
                 className="right-0 top-4 w-44 h-56 hover:scale-105 transition-transform"
               />
             </div>
-            <div onClick={() => setSelectedPhoto(PHOTOS[2])} className="cursor-pointer">
+            <div onClick={() => setSelectedPhoto(PHOTO_DETAILS[2])} className="cursor-pointer">
               <Sticker
-                src={PHOTOS[2]}
+                src={PHOTO_DETAILS[2].src}
                 rotate={6}
                 delay={0.45}
                 replayKey={replayKey}
                 className="left-8 bottom-0 w-40 h-52 hover:scale-105 transition-transform"
               />
             </div>
-            <div onClick={() => setSelectedPhoto(PHOTOS[3])} className="cursor-pointer">
+            <div onClick={() => setSelectedPhoto(PHOTO_DETAILS[3])} className="cursor-pointer">
               <Sticker
-                src={PHOTOS[3]}
+                src={PHOTO_DETAILS[3].src}
                 rotate={-11}
                 delay={0.6}
                 replayKey={replayKey}
@@ -164,16 +193,16 @@ export default function Hero({ replayKey }) {
 
           {/* Mobile: original 2x2 grid */}
           <div className="grid grid-cols-2 gap-4 sm:hidden w-full">
-            {PHOTOS.map((p, i) => (
+            {PHOTO_DETAILS.map((p, i) => (
               <motion.div
                 key={i}
                 initial={{ scale: 0, rotate: i % 2 ? 5 : -5, opacity: 0 }}
                 animate={{ scale: 1, rotate: i % 2 ? 5 : -5, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 200, damping: 12, delay: 0.1 * i }}
                 onClick={() => setSelectedPhoto(p)}
-                className="relative aspect-[3/4] rounded-[20px] border-4 border-black bg-white p-1.5 shadow-[6px_6px_0_0_#000] cursor-pointer"
+                className="relative aspect-[3/4] rounded-[20px] border-4 border-black bg-white p-1.5 shadow-[6px_6px_0_0_#000] cursor-pointer active:scale-95 transition-transform"
               >
-                <img src={p} alt="Karima" className="h-full w-full rounded-[12px] object-cover" />
+                <img src={p.src} alt={p.title} className="h-full w-full rounded-[12px] object-cover" />
                 <div className="absolute bottom-2 right-2 bg-black/60 text-white rounded-full p-1">
                   <Eye className="h-3.5 w-3.5" />
                 </div>

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import Sticker from "./Sticker";
 import Marquee from "./Marquee";
-import { Heart, Crown, Eye, X } from "lucide-react";
+import { Heart, Crown, Eye, X, Sparkles, Gift } from "lucide-react";
 import PowButton from "./PowButton";
 import { playSparkleChime } from "@/lib/soundEffects";
 
@@ -29,7 +29,7 @@ export default function Hero({ replayKey }) {
 
   return (
     <section className="relative overflow-hidden" style={{ background: "#CCFF00" }}>
-      <Marquee text="THE MOST BEAUTIFUL & KINDEST SOUL" />
+      <Marquee text="FOR YOU KARIMA ✦ THE MOST BEAUTIFUL & KINDEST SOUL" />
 
       {/* Lightbox Modal for Photo Tap */}
       <AnimatePresence>
@@ -60,7 +60,7 @@ export default function Hero({ replayKey }) {
               />
               <div className="mt-3 text-center py-2">
                 <p className="font-display text-lg text-black">
-                  THE MOST BEAUTIFUL SMILE 🌸
+                  YOUR BEAUTIFUL SMILE 🌸
                 </p>
               </div>
             </motion.div>
@@ -79,10 +79,10 @@ export default function Hero({ replayKey }) {
           {/* Top Pill Badges */}
           <div className="flex flex-wrap justify-center gap-2 mb-3">
             <span className="inline-flex items-center gap-1.5 rounded-full border-3 border-black bg-white px-4 py-1 font-display text-xs sm:text-sm tracking-wider shadow-[4px_4px_0_0_#000]">
-              <Crown className="h-4 w-4 text-[#FF0099]" /> 1 IN 8 BILLION
+              <Gift className="h-4 w-4 text-[#FF0099]" /> MADE JUST FOR YOU
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border-3 border-black bg-[#310062] px-4 py-1 font-display text-xs sm:text-sm text-white tracking-wider shadow-[4px_4px_0_0_#000]">
-              <Heart className="h-4 w-4 text-[#CCFF00] fill-[#CCFF00]" /> KINDEST SOUL
+              <Heart className="h-4 w-4 text-[#CCFF00] fill-[#CCFF00]" /> MY FAVOURITE PERSON
             </span>
           </div>
 
@@ -100,12 +100,12 @@ export default function Hero({ replayKey }) {
               KARIMA
             </p>
             <span className="inline-block rounded-full border-4 border-black bg-white px-5 py-2.5 font-display text-xl sm:text-3xl text-black shadow-[6px_6px_0_0_#000] rotate-[2deg]">
-              aka FULTUSI 🌸
+              MY FULTUSI 🌸
             </span>
           </div>
 
           <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg font-extrabold text-black/85 leading-relaxed">
-            “The most beautiful and kindest girl in the entire world. May you always stay happy, smiling, and protected forever, Insha'Allah 🤲”
+            “To the most beautiful and kindest girl in the world — I built this special place just for you. I pray you will always stay happy, smiling, and protected forever, Insha'Allah 🤲💖”
           </p>
 
           <div className="mt-5">
@@ -115,7 +115,7 @@ export default function Hero({ replayKey }) {
               color="#000000"
               className="text-sm sm:text-base py-2.5 px-6"
             >
-              SPARKLE CELEBRATION 💥✨
+              POP CELEBRATION FOR YOU 💥✨
             </PowButton>
           </div>
         </motion.div>
@@ -183,7 +183,7 @@ export default function Hero({ replayKey }) {
         </div>
       </div>
 
-      <Marquee text="MAY YOU ALWAYS BE HAPPY FOREVER 🤲" bg="#310062" color="#FFFFFF" reverse />
+      <Marquee text="I PRAY YOU WILL BE HAPPY FOREVER 🤲 MADE WITH ALL MY HEART" bg="#310062" color="#FFFFFF" reverse />
     </section>
   );
 }

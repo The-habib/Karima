@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Marquee({
-  text = "THE MOST BEAUTIFUL & KINDEST SOUL",
+  text = "FOR YOU KARIMA ✦ THE MOST BEAUTIFUL & KINDEST SOUL",
   bg = "#000000",
   color = "#CCFF00",
   reverse = false,

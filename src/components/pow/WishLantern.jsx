@@ -6,15 +6,15 @@ import PowButton from "./PowButton";
 import { playSparkleChime } from "@/lib/soundEffects";
 
 const BLESSINGS = [
-  "May she be happy forever and ever, Insha'Allah 🤲",
-  "May her kind and gentle heart always be protected and cherished 💖",
-  "May every single tear turn into a thousand beautiful smiles ✨",
-  "May her life be blessed with endless peace, love, and success 🌸",
-  "May the most beautiful girl in the world always shine the brightest 🌟",
+  "I pray you will be happy and smiling forever and ever, Insha'Allah 🤲",
+  "May your kind and gentle heart always be protected, loved, and cherished 💖",
+  "May every single difficulty turn into a thousand beautiful blessings and joy ✨",
+  "May Allah bless your life with immense peace, radiant health, and great success 🌸",
+  "You are the most beautiful soul, and I pray your world is always filled with light 🌟",
 ];
 
 export default function WishLantern() {
-  const [lanternCount, setLanternCount] = useState(108);
+  const [lanternCount, setLanternCount] = useState(128);
   const [selectedBlessing, setSelectedBlessing] = useState(0);
   const [floatingLanterns, setFloatingLanterns] = useState([]);
 
@@ -66,15 +66,15 @@ export default function WishLantern() {
 
         <div className="relative z-10 max-w-2xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border-3 border-black bg-[#CCFF00] px-4 py-1 font-display text-xs sm:text-sm tracking-widest text-black shadow-[4px_4px_0_0_#000]">
-            <Sparkles className="h-4 w-4 text-[#FF0099]" /> A HEARTFELT DU'A FOR HER
+            <Sparkles className="h-4 w-4 text-[#FF0099]" /> MY SINCERE DU'A FOR YOU
           </span>
 
           <h2 className="mt-5 font-display text-3xl sm:text-6xl text-white leading-tight">
-            MAY SHE BE <span className="text-[#CCFF00] underline decoration-[#FF0099] decoration-wavy">HAPPY FOREVER</span>, INSHA'ALLAH
+            I PRAY YOU WILL BE <span className="text-[#CCFF00] underline decoration-[#FF0099] decoration-wavy">HAPPY FOREVER</span>, INSHA'ALLAH
           </h2>
 
           <p className="mt-4 text-base sm:text-lg font-bold text-white/90 leading-relaxed">
-            She is truly the most beautiful and the kindest girl in the entire world. Every lantern released here carries a sincere prayer for her perpetual joy, peace, and smiles.
+            You are truly the most beautiful and the kindest girl in the world. Tap below to release a glowing wish lantern — each one carries my heartfelt prayers for your life, peace, and eternal happiness.
           </p>
 
           {/* Blessing selector tabs */}
@@ -109,14 +109,14 @@ export default function WishLantern() {
               color="#FFFFFF"
               className="text-lg py-3.5 px-8 w-full sm:w-auto animate-pow-pulse"
             >
-              RELEASE A WISH LANTERN 🏮✨
+              RELEASE A PRAYER LANTERN FOR YOU 🏮✨
             </PowButton>
           </div>
 
           {/* Live counter */}
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-white/40 bg-black/40 px-4 py-1.5 text-xs font-mono font-bold text-white/80">
             <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400" />
-            <span>{lanternCount} heartfelt prayers & wishes released</span>
+            <span>{lanternCount} prayers & blessings sent with all my heart</span>
           </div>
         </div>
       </div>

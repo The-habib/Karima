@@ -6,18 +6,18 @@ import { playSparkleChime } from "@/lib/soundEffects";
 const TRIBUTES = [
   {
     icon: Crown,
-    title: "THE MOST BEAUTIFUL",
+    title: "TO ME, YOU ARE THE MOST BEAUTIFUL",
     subtitle: "In The Entire World 🌸",
-    description: "It is not just about grace; it is the effortless radiance, warmth, and innocence in your smile that makes the whole world feel brighter and more peaceful.",
+    description: "It is not just how gorgeous you are; it is the effortless radiance, warmth, and innocence in your eyes and smile that makes my whole world feel brighter and more peaceful.",
     badge: "1 IN 8 BILLION",
     bg: "#FFFFFF",
     accent: "#FF0099",
   },
   {
     icon: Flower2,
-    title: "THE KINDEST HEART",
+    title: "YOUR KIND HEART IS A BLESSING",
     subtitle: "Pure & Gentle Soul 💖",
-    description: "In a world that can often be loud and hurried, your gentle nature, compassion, and kindness stand out like a rare treasure. You bring warmth wherever you are.",
+    description: "In a world that can often be loud and hurried, your gentle nature, compassion, and kindness stand out like a rare treasure. You bring comfort to my heart just by being you.",
     badge: "PURE BLESSING",
     bg: "#310062",
     textColor: "#FFFFFF",
@@ -25,18 +25,18 @@ const TRIBUTES = [
   },
   {
     icon: Smile,
-    title: "A SOURCE OF PURE JOY",
+    title: "YOU BRING PURE JOY TO MY LIFE",
     subtitle: "Endless Smiles & Peace ✨",
-    description: "Just knowing you exist brings lightness to the heart. Your laughter, sincerity, and presence make every ordinary day feel extraordinary.",
-    badge: "PRECIOUS SOUL",
+    description: "Just hearing from you or knowing you are happy brings genuine lightness to my days. Your laughter, sweetness, and presence make every ordinary day feel extraordinary.",
+    badge: "PRECIOUS TO ME",
     bg: "#CCFF00",
     accent: "#FF0099",
   },
   {
     icon: Sun,
-    title: "FOREVER HAPPY",
+    title: "MY PRAYER FOR YOUR HAPPINESS",
     subtitle: "Insha'Allah 🤲",
-    description: "May your journey ahead be blessed with radiant health, immense peace, boundless success, and happiness that stays with you forever.",
+    description: "I pray with all my heart that Allah blesses you with radiant health, immense peace, boundless success, and happiness that stays with you forever and ever.",
     badge: "ETERNAL DU'A",
     bg: "#FF0099",
     textColor: "#FFFFFF",
@@ -56,13 +56,13 @@ export default function KindnessCards() {
     <section className="mx-auto max-w-4xl px-5 py-14">
       <div className="text-center mb-10">
         <span className="inline-flex items-center gap-2 rounded-full border-3 border-black bg-[#CCFF00] px-4 py-1 font-display text-xs sm:text-sm tracking-widest text-black shadow-[4px_4px_0_0_#000]">
-          <Heart className="h-4 w-4 text-[#FF0099] fill-[#FF0099]" /> A SINCERE TRIBUTE
+          <Heart className="h-4 w-4 text-[#FF0099] fill-[#FF0099]" /> FROM MY HEART TO YOURS
         </span>
         <h2 className="mt-4 font-display text-3xl sm:text-6xl text-black leading-tight">
-          WHY SHE IS <span className="text-[#FF0099]">THE MOST SPECIAL</span>
+          WHAT MAKES YOU <span className="text-[#FF0099]">SO SPECIAL TO ME</span>
         </h2>
         <p className="mt-2 text-base sm:text-lg font-bold text-black/70 max-w-xl mx-auto">
-          A heartfelt recognition of the most beautiful soul, her unmatched kindness, and the peace she brings.
+          Every reason why you are truly one of a kind, unforgettable, and cherished in my eyes.
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export default function KindnessCards() {
 
               {/* Interactive micro badge */}
               <div className="mt-5 pt-3 border-t-2 border-current/20 flex items-center justify-between text-xs font-mono font-extrabold">
-                <span>✦ Tap to celebrate</span>
+                <span>✦ Tap to read with love</span>
                 <span className="font-display text-sm">{isExpanded ? "💖 CHERISHED" : "✨ EXPLORE"}</span>
               </div>
             </motion.div>

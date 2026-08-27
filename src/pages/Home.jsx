@@ -6,7 +6,7 @@ import KindnessCards from "@/components/pow/KindnessCards";
 import WishLantern from "@/components/pow/WishLantern";
 import SecretLetter from "@/components/pow/SecretLetter";
 import PowButton from "@/components/pow/PowButton";
-import { PartyPopper, Heart, Rocket, Crown, Sparkles, Sun } from "lucide-react";
+import { PartyPopper, Heart, Rocket, Crown, Sparkles, Sun, Gift } from "lucide-react";
 import { playSparkleChime } from "@/lib/soundEffects";
 
 const MASCOT_1 = "https://media.base44.com/images/public/6a90a31b482442ee977170bd/9fe4581cc_generated_c98b2cc3.png";
@@ -47,19 +47,19 @@ export default function Home() {
       {/* 1. Hero Showcase */}
       <Hero replayKey={replayKey} />
 
-      {/* 2. Interactive Story Cards (Original Sweet & Clean Cards) */}
+      {/* 2. Interactive Story Cards (Speaking directly from Habib to Karima) */}
       <main id="cards" className="relative z-10 mx-auto max-w-3xl space-y-10 px-5 py-16">
         <StoryCard
           bg="#FFFFFF"
-          eyebrow="CARD 01"
-          headline={<span>HAPPY BIRTHDAY,<br />FULTUSI! 🎂</span>}
+          eyebrow="FOR YOU • CARD 01"
+          headline={<span>HAPPY BIRTHDAY,<br />MY DEAR FULTUSI! 🎂</span>}
           subtext={
             opened.one
-              ? "🎉 Consider this cake officially thrown in your honour. Make a wish — I'll help it come true."
-              : "One tiny blob, one giant cupcake, and a whole lot of noise just for you."
+              ? "🎉 Make your wish today — and I pray every single one of your dreams comes true. You deserve the happiest birthday ever!"
+              : "I built this entire website just to make you smile on your birthday. Pop to open your first card!"
           }
           mascot={MASCOT_1}
-          buttonLabel={opened.one ? "POP AGAIN 💥" : "VIEW 🎉"}
+          buttonLabel={opened.one ? "POP AGAIN 💥" : "OPEN CARD 01 🎉"}
           buttonBg="#CCFF00"
           onAction={() => burst("one")}
           burstKey={bursts.one}
@@ -69,15 +69,15 @@ export default function Home() {
         <StoryCard
           bg="#310062"
           textColor="#FFFFFF"
-          eyebrow="CARD 02"
-          headline={<span>YOU MAKE<br />EVERYTHING<br />BETTER ✨</span>}
+          eyebrow="FROM MY HEART • CARD 02"
+          headline={<span>YOU MAKE MY WORLD<br />SO MUCH BETTER ✨</span>}
           subtext={
             opened.two
-              ? "Your laugh fixes bad days. Your ordinary texts are my favourite part of mine. Today the whole world gets to be lucky you exist."
-              : "There's a message in here. Open it slowly."
+              ? "Your laugh fixes bad days. Talking to you is the best part of my day, and having you in my life is a blessing I cherish every single moment."
+              : "There is something I always wanted to tell you. Open it slowly."
           }
           mascot={MASCOT_2}
-          buttonLabel={opened.two ? "READ AGAIN 💖" : "OPEN 🌸"}
+          buttonLabel={opened.two ? "READ AGAIN 💖" : "OPEN CARD 02 🌸"}
           buttonBg="#FF0099"
           buttonColor="#FFFFFF"
           onAction={() => burst("two")}
@@ -87,15 +87,15 @@ export default function Home() {
 
         <StoryCard
           bg="#FF0099"
-          eyebrow="CARD 03"
-          headline={<span>TEAM UP<br />WITH ME? 💫</span>}
+          eyebrow="MY WISH FOR US • CARD 03"
+          headline={<span>STAY IN MY LIFE<br />FOREVER? 💫</span>}
           subtext={
             opened.three
-              ? "Deal accepted. Cake, long walks and terrible jokes — I'm bringing all three."
-              : "Birthdays are better in pairs. Say the word and I'm in."
+              ? "Deal accepted! Endless laughter, good conversations, and staying by your side through everything. I'm always here for you."
+              : "A special question from me to you. Tap to unlock."
           }
           mascot={MASCOT_3}
-          buttonLabel={opened.three ? "LET'S GO! 🚀" : "OPEN 🔑"}
+          buttonLabel={opened.three ? "ALWAYS TOGETHER! 🚀" : "OPEN CARD 03 🔑"}
           buttonBg="#CCFF00"
           onAction={() => burst("three")}
           burstKey={bursts.three}
@@ -107,9 +107,9 @@ export default function Home() {
         {/* Highlight Badges */}
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: Crown, label: "MOST BEAUTIFUL", bg: "#CCFF00" },
-            { icon: Heart, label: "KINDEST GIRL", bg: "#FFFFFF" },
-            { icon: Sparkles, label: "HAPPY FOREVER", bg: "#CCFF00" },
+            { icon: Crown, label: "MOST BEAUTIFUL TO ME", bg: "#CCFF00" },
+            { icon: Heart, label: "KINDEST HEART I KNOW", bg: "#FFFFFF" },
+            { icon: Sparkles, label: "PRAYING FOR YOUR SMILE", bg: "#CCFF00" },
           ].map(({ icon: Icon, label, bg }) => (
             <div
               key={label}
@@ -117,7 +117,7 @@ export default function Home() {
               className="flex items-center gap-3 rounded-[24px] border-4 border-black px-4 py-4 shadow-[6px_6px_0_0_#000] hover:scale-105 transition-transform"
             >
               <Icon className="h-6 w-6 shrink-0 text-[#FF0099]" />
-              <span className="font-display text-sm sm:text-base leading-tight">{label}</span>
+              <span className="font-display text-xs sm:text-sm leading-tight">{label}</span>
             </div>
           ))}
         </div>
@@ -129,7 +129,7 @@ export default function Home() {
       {/* 4. Interactive Wish Lantern & Eternal Du'a */}
       <WishLantern />
 
-      {/* 5. Sealed Heartfelt Letter from Habib */}
+      {/* 5. Sealed Personal Letter from Habib */}
       <SecretLetter />
 
       {/* 6. Epic Footer */}
@@ -139,19 +139,19 @@ export default function Home() {
             className="font-display text-white leading-[0.85] tracking-tight"
             style={{ fontSize: "clamp(2.5rem, 10vw, 6rem)" }}
           >
-            CELEBRATE<br />
+            FOR YOU,<br />
             <span style={{ color: "#CCFF00" }}>KARIMA (FULTUSI)</span>
           </h2>
           <p className="mt-5 text-base sm:text-lg font-bold leading-relaxed text-white/85">
-            “The most beautiful girl, the kindest heart. May she be happy forever and ever, Insha'Allah 🤲💖”
+            “You are the most beautiful girl, the kindest heart. I pray you stay happy forever and ever, Insha'Allah 🤲💖”
           </p>
           <div className="mt-8">
             <PowButton onClick={handleReplay} bg="#FF0099" color="#FFFFFF" className="text-lg py-3.5 px-8">
-              REPLAY THE MAGIC ✨🎉
+              REPLAY YOUR SPECIAL SITE ✨🎉
             </PowButton>
           </div>
           <p className="mt-8 text-xs font-mono font-bold text-white/50">
-            Dedicated with all my heart — Habib
+            Made with all my heart and prayers, just for you — Habib
           </p>
         </div>
       </footer>

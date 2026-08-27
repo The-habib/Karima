@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
-import FloatingParticles from "@/components/pow/FloatingParticles";
 import Hero from "@/components/pow/Hero";
 import StoryCard from "@/components/pow/StoryCard";
 import KindnessCards from "@/components/pow/KindnessCards";
@@ -45,9 +44,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-white font-body overflow-x-hidden selection:bg-[#FF0099] selection:text-white">
-      {/* 0. Ambient Floating Particles */}
-      <FloatingParticles />
-
       {/* 1. Hero Showcase */}
       <Hero replayKey={replayKey} />
 

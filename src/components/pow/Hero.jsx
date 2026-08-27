@@ -29,7 +29,7 @@ export default function Hero({ replayKey }) {
 
   return (
     <section className="relative overflow-hidden" style={{ background: "#CCFF00" }}>
-      <Marquee text="THE MOST BEAUTIFUL & KINDEST GIRL IN THE WORLD ✷ KARIMA ✷ FULTUSI ✷" />
+      <Marquee text="THE MOST BEAUTIFUL & KINDEST SOUL" />
 
       {/* Lightbox Modal for Photo Tap */}
       <AnimatePresence>
@@ -183,7 +183,7 @@ export default function Hero({ replayKey }) {
         </div>
       </div>
 
-      <Marquee text="FOREVER HAPPY INSHA'ALLAH ✷ PURE KINDNESS ✷ NO.1 BEAUTIFUL" bg="#310062" color="#FFFFFF" reverse />
+      <Marquee text="MAY YOU ALWAYS BE HAPPY FOREVER 🤲" bg="#310062" color="#FFFFFF" reverse />
     </section>
   );
 }

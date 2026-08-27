@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import confetti from "canvas-confetti";
+import FloatingParticles from "@/components/pow/FloatingParticles";
 import Hero from "@/components/pow/Hero";
 import StoryCard from "@/components/pow/StoryCard";
+import KindnessCards from "@/components/pow/KindnessCards";
+import WishLantern from "@/components/pow/WishLantern";
+import ChatReplay from "@/components/pow/ChatReplay";
+import Decoder from "@/components/pow/Decoder";
+import SecretLetter from "@/components/pow/SecretLetter";
 import PowButton from "@/components/pow/PowButton";
-import { PartyPopper, Heart, Rocket } from "lucide-react";
+import { PartyPopper, Heart, Rocket, Clock, Sparkles, Crown, Sun } from "lucide-react";
+import { playSparkleChime } from "@/lib/soundEffects";
 
 const MASCOT_1 = "https://media.base44.com/images/public/6a90a31b482442ee977170bd/9fe4581cc_generated_c98b2cc3.png";
 const MASCOT_2 = "https://media.base44.com/images/public/6a90a31b482442ee977170bd/57f37a585_generated_afdd823c.png";
@@ -14,22 +22,50 @@ export default function Home() {
   const [opened, setOpened] = useState({});
 
   const burst = (key) => {
+    playSparkleChime();
+    confetti({
+      particleCount: 50,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#FF0099", "#CCFF00", "#FFD700", "#FFFFFF"],
+    });
     setBursts((b) => ({ ...b, [key]: (b[key] || 0) + 1 }));
     setOpened((o) => ({ ...o, [key]: true }));
   };
 
+  const handleReplay = () => {
+    playSparkleChime();
+    confetti({
+      particleCount: 100,
+      spread: 120,
+      origin: { y: 0.5 },
+      colors: ["#FF0099", "#CCFF00", "#310062", "#FFD700", "#FFFFFF"],
+    });
+    setReplayKey((k) => k + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="min-h-screen bg-white font-body">
+    <div className="relative min-h-screen bg-white font-body overflow-x-hidden selection:bg-[#FF0099] selection:text-white">
+      {/* 0. Ambient Floating Particles */}
+      <FloatingParticles />
+
+      {/* 1. Hero Showcase */}
       <Hero replayKey={replayKey} />
 
-      <main id="cards" className="mx-auto max-w-3xl space-y-10 px-5 py-16">
+      {/* 2. Interactive Story Cards */}
+      <main id="cards" className="relative z-10 mx-auto max-w-3xl space-y-10 px-5 py-16">
         <StoryCard
           bg="#FFFFFF"
-          eyebrow="CARD 01"
-          headline={<span>HAPPY BIRTHDAY,<br />FULTUSI!</span>}
-          subtext={opened.one ? "🎉 Consider this cake officially thrown in your honour. Make a wish — I'll help it come true." : "One tiny blob, one giant cupcake, and a whole lot of noise just for you."}
+          eyebrow="CARD 01 • THE SWEETEST BANTER"
+          headline={<span>HAPPY BIRTHDAY,<br />FULTUSI! 🎂</span>}
+          subtext={
+            opened.one
+              ? "🎉 “Akon akta kaj korchi. 30 min por sms koro...” and replies at 10:46 PM! Worth every second of the wait."
+              : "One tiny blob, one giant cupcake, and an infinite amount of love and noise just for you. Pop to see!"
+          }
           mascot={MASCOT_1}
-          buttonLabel={opened.one ? "POP AGAIN" : "VIEW"}
+          buttonLabel={opened.one ? "POP AGAIN 💥" : "POP TO VIEW 🎉"}
           buttonBg="#CCFF00"
           onAction={() => burst("one")}
           burstKey={bursts.one}
@@ -39,11 +75,15 @@ export default function Home() {
         <StoryCard
           bg="#310062"
           textColor="#FFFFFF"
-          eyebrow="CARD 02"
-          headline={<span>YOU MAKE<br />EVERYTHING<br />BETTER</span>}
-          subtext={opened.two ? "Your laugh fixes bad days. Your ordinary texts are my favourite part of mine. Today the whole world gets to be lucky you exist." : "There's a message in here. Open it slowly."}
+          eyebrow="CARD 02 • ONE IN 8 BILLION"
+          headline={<span>YOU MAKE<br />EVERYTHING<br />BETTER ✨</span>}
+          subtext={
+            opened.two
+              ? "Your laugh fixes bad days. Your ordinary texts are my favourite part of mine. Today the whole world is lucky you exist."
+              : "The kindest soul with the most beautiful smile in the world. Open slowly."
+          }
           mascot={MASCOT_2}
-          buttonLabel={opened.two ? "READ AGAIN" : "OPEN"}
+          buttonLabel={opened.two ? "READ AGAIN 💖" : "OPEN MESSAGE 🌸"}
           buttonBg="#FF0099"
           buttonColor="#FFFFFF"
           onAction={() => burst("two")}
@@ -53,11 +93,15 @@ export default function Home() {
 
         <StoryCard
           bg="#FF0099"
-          eyebrow="CARD 03"
-          headline={<span>TEAM UP<br />WITH ME?</span>}
-          subtext={opened.three ? "Deal accepted. Cake, long walks and terrible jokes — I'm bringing all three." : "Birthdays are better in pairs. Say the word and I'm in."}
+          eyebrow="CARD 03 • FILMY STYLE PROPOSE"
+          headline={<span>TEAM UP<br />WITH ME? 🎬</span>}
+          subtext={
+            opened.three
+              ? "Deal accepted! Endless chats, terrible jokes, zero drama, and staying happy forever, Insha'Allah."
+              : "Birthdays are better together. Say the word and I'm always in."
+          }
           mascot={MASCOT_3}
-          buttonLabel={opened.three ? "LET'S GO!" : "OPEN"}
+          buttonLabel={opened.three ? "LET'S GO! 🚀" : "UNLOCK 🔑"}
           buttonBg="#CCFF00"
           onAction={() => burst("three")}
           burstKey={bursts.three}
@@ -66,33 +110,61 @@ export default function Home() {
           wideButton
         />
 
+        {/* Highlight Badges */}
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: PartyPopper, label: "ONE BIG DAY", bg: "#CCFF00" },
-            { icon: Heart, label: "ZERO CHILL", bg: "#FFFFFF" },
-            { icon: Rocket, label: "ALL THE WISHES", bg: "#CCFF00" },
+            { icon: Crown, label: "MOST BEAUTIFUL", bg: "#CCFF00" },
+            { icon: Heart, label: "KINDEST GIRL", bg: "#FFFFFF" },
+            { icon: Sparkles, label: "HAPPY FOREVER", bg: "#CCFF00" },
           ].map(({ icon: Icon, label, bg }) => (
-            <div key={label} style={{ background: bg }}
-              className="flex items-center gap-3 rounded-[24px] border-4 border-black px-4 py-4 shadow-[6px_6px_0_0_#000]">
-              <Icon className="h-6 w-6 shrink-0" />
-              <span className="font-display text-lg leading-tight">{label}</span>
+            <div
+              key={label}
+              style={{ background: bg }}
+              className="flex items-center gap-3 rounded-[24px] border-4 border-black px-4 py-4 shadow-[6px_6px_0_0_#000] hover:scale-105 transition-transform"
+            >
+              <Icon className="h-6 w-6 shrink-0 text-[#FF0099]" />
+              <span className="font-display text-sm sm:text-base leading-tight">{label}</span>
             </div>
           ))}
         </div>
       </main>
 
-      <footer className="bg-black px-5 py-16 text-center">
-        <h2 className="font-display text-white leading-[0.85]" style={{ fontSize: "clamp(2.5rem, 10vw, 6rem)" }}>
-          CELEBRATE<br />
-          <span style={{ color: "#CCFF00" }}>FULTUSI</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-[1.125rem] font-bold leading-[1.6] text-white/80">
-          Built with far too much effort and a completely obvious crush.
-        </p>
-        <div className="mt-7">
-          <PowButton onClick={() => { setReplayKey((k) => k + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-            REPLAY THE MAGIC
-          </PowButton>
+      {/* 3. Tribute to Her Kindness and Beauty */}
+      <KindnessCards />
+
+      {/* 4. Interactive Wish Lantern & Du'a Section */}
+      <WishLantern />
+
+      {/* 5. The Real WhatsApp Chat Memories */}
+      <ChatReplay />
+
+      {/* 6. Karima-to-Reality Decoder */}
+      <Decoder />
+
+      {/* 7. Sealed Secret Letter from Habib */}
+      <SecretLetter />
+
+      {/* 8. Epic Footer */}
+      <footer className="relative z-10 bg-black px-5 py-18 text-center border-t-4 border-black">
+        <div className="max-w-2xl mx-auto">
+          <h2
+            className="font-display text-white leading-[0.85] tracking-tight"
+            style={{ fontSize: "clamp(2.5rem, 10vw, 6rem)" }}
+          >
+            CELEBRATE<br />
+            <span style={{ color: "#CCFF00" }}>KARIMA (FULTUSI)</span>
+          </h2>
+          <p className="mt-5 text-base sm:text-lg font-bold leading-relaxed text-white/85">
+            “The most beautiful girl, the kindest heart. May she be happy forever and ever, Insha'Allah 🤲💖”
+          </p>
+          <div className="mt-8">
+            <PowButton onClick={handleReplay} bg="#FF0099" color="#FFFFFF" className="text-lg py-3.5 px-8">
+              REPLAY THE MAGIC ✨🎉
+            </PowButton>
+          </div>
+          <p className="mt-8 text-xs font-mono font-bold text-white/50">
+            Dedicated with all my heart — Habib
+          </p>
         </div>
       </footer>
     </div>

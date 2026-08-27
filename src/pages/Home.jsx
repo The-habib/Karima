@@ -5,11 +5,9 @@ import Hero from "@/components/pow/Hero";
 import StoryCard from "@/components/pow/StoryCard";
 import KindnessCards from "@/components/pow/KindnessCards";
 import WishLantern from "@/components/pow/WishLantern";
-import ChatReplay from "@/components/pow/ChatReplay";
-import Decoder from "@/components/pow/Decoder";
 import SecretLetter from "@/components/pow/SecretLetter";
 import PowButton from "@/components/pow/PowButton";
-import { PartyPopper, Heart, Rocket, Clock, Sparkles, Crown, Sun } from "lucide-react";
+import { PartyPopper, Heart, Rocket, Crown, Sparkles, Sun } from "lucide-react";
 import { playSparkleChime } from "@/lib/soundEffects";
 
 const MASCOT_1 = "https://media.base44.com/images/public/6a90a31b482442ee977170bd/9fe4581cc_generated_c98b2cc3.png";
@@ -53,19 +51,19 @@ export default function Home() {
       {/* 1. Hero Showcase */}
       <Hero replayKey={replayKey} />
 
-      {/* 2. Interactive Story Cards */}
+      {/* 2. Interactive Story Cards (Original Sweet & Clean Cards) */}
       <main id="cards" className="relative z-10 mx-auto max-w-3xl space-y-10 px-5 py-16">
         <StoryCard
           bg="#FFFFFF"
-          eyebrow="CARD 01 • THE SWEETEST BANTER"
+          eyebrow="CARD 01"
           headline={<span>HAPPY BIRTHDAY,<br />FULTUSI! 🎂</span>}
           subtext={
             opened.one
-              ? "🎉 “Akon akta kaj korchi. 30 min por sms koro...” and replies at 10:46 PM! Worth every second of the wait."
-              : "One tiny blob, one giant cupcake, and an infinite amount of love and noise just for you. Pop to see!"
+              ? "🎉 Consider this cake officially thrown in your honour. Make a wish — I'll help it come true."
+              : "One tiny blob, one giant cupcake, and a whole lot of noise just for you."
           }
           mascot={MASCOT_1}
-          buttonLabel={opened.one ? "POP AGAIN 💥" : "POP TO VIEW 🎉"}
+          buttonLabel={opened.one ? "POP AGAIN 💥" : "VIEW 🎉"}
           buttonBg="#CCFF00"
           onAction={() => burst("one")}
           burstKey={bursts.one}
@@ -75,15 +73,15 @@ export default function Home() {
         <StoryCard
           bg="#310062"
           textColor="#FFFFFF"
-          eyebrow="CARD 02 • ONE IN 8 BILLION"
+          eyebrow="CARD 02"
           headline={<span>YOU MAKE<br />EVERYTHING<br />BETTER ✨</span>}
           subtext={
             opened.two
-              ? "Your laugh fixes bad days. Your ordinary texts are my favourite part of mine. Today the whole world is lucky you exist."
-              : "The kindest soul with the most beautiful smile in the world. Open slowly."
+              ? "Your laugh fixes bad days. Your ordinary texts are my favourite part of mine. Today the whole world gets to be lucky you exist."
+              : "There's a message in here. Open it slowly."
           }
           mascot={MASCOT_2}
-          buttonLabel={opened.two ? "READ AGAIN 💖" : "OPEN MESSAGE 🌸"}
+          buttonLabel={opened.two ? "READ AGAIN 💖" : "OPEN 🌸"}
           buttonBg="#FF0099"
           buttonColor="#FFFFFF"
           onAction={() => burst("two")}
@@ -93,15 +91,15 @@ export default function Home() {
 
         <StoryCard
           bg="#FF0099"
-          eyebrow="CARD 03 • FILMY STYLE PROPOSE"
-          headline={<span>TEAM UP<br />WITH ME? 🎬</span>}
+          eyebrow="CARD 03"
+          headline={<span>TEAM UP<br />WITH ME? 💫</span>}
           subtext={
             opened.three
-              ? "Deal accepted! Endless chats, terrible jokes, zero drama, and staying happy forever, Insha'Allah."
-              : "Birthdays are better together. Say the word and I'm always in."
+              ? "Deal accepted. Cake, long walks and terrible jokes — I'm bringing all three."
+              : "Birthdays are better in pairs. Say the word and I'm in."
           }
           mascot={MASCOT_3}
-          buttonLabel={opened.three ? "LET'S GO! 🚀" : "UNLOCK 🔑"}
+          buttonLabel={opened.three ? "LET'S GO! 🚀" : "OPEN 🔑"}
           buttonBg="#CCFF00"
           onAction={() => burst("three")}
           burstKey={bursts.three}
@@ -132,19 +130,13 @@ export default function Home() {
       {/* 3. Tribute to Her Kindness and Beauty */}
       <KindnessCards />
 
-      {/* 4. Interactive Wish Lantern & Du'a Section */}
+      {/* 4. Interactive Wish Lantern & Eternal Du'a */}
       <WishLantern />
 
-      {/* 5. The Real WhatsApp Chat Memories */}
-      <ChatReplay />
-
-      {/* 6. Karima-to-Reality Decoder */}
-      <Decoder />
-
-      {/* 7. Sealed Secret Letter from Habib */}
+      {/* 5. Sealed Heartfelt Letter from Habib */}
       <SecretLetter />
 
-      {/* 8. Epic Footer */}
+      {/* 6. Epic Footer */}
       <footer className="relative z-10 bg-black px-5 py-18 text-center border-t-4 border-black">
         <div className="max-w-2xl mx-auto">
           <h2

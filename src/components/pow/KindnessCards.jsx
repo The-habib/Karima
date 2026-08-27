@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Sparkles, Star, Sun, Smile, Crown, Flower2, Shield } from "lucide-react";
-import PowButton from "./PowButton";
 import { playSparkleChime } from "@/lib/soundEffects";
 
 const TRIBUTES = [
@@ -9,7 +8,7 @@ const TRIBUTES = [
     icon: Crown,
     title: "THE MOST BEAUTIFUL",
     subtitle: "In The Entire World 🌸",
-    description: "It is not just about grace or elegance; it is the effortless radiance, warmth, and innocence in your eyes that makes the whole world feel brighter.",
+    description: "It is not just about grace; it is the effortless radiance, warmth, and innocence in your smile that makes the whole world feel brighter and more peaceful.",
     badge: "1 IN 8 BILLION",
     bg: "#FFFFFF",
     accent: "#FF0099",
@@ -18,7 +17,7 @@ const TRIBUTES = [
     icon: Flower2,
     title: "THE KINDEST HEART",
     subtitle: "Pure & Gentle Soul 💖",
-    description: "In a world that can often be loud and hurried, your gentle nature and kindness stand out like a rare flower. You bring comfort without even trying.",
+    description: "In a world that can often be loud and hurried, your gentle nature, compassion, and kindness stand out like a rare treasure. You bring warmth wherever you are.",
     badge: "PURE BLESSING",
     bg: "#310062",
     textColor: "#FFFFFF",
@@ -26,10 +25,10 @@ const TRIBUTES = [
   },
   {
     icon: Smile,
-    title: "THE SWEETEST 'AJOB MANUS'",
-    subtitle: "Teasing & 1.5hr Replies ⏳",
-    description: "From '30 min por sms koro' to deleting posts in seconds and saying 'Natok kom koro' — every little chat with you is pure joy and laughter.",
-    badge: "PURE ENTERTAINMENT",
+    title: "A SOURCE OF PURE JOY",
+    subtitle: "Endless Smiles & Peace ✨",
+    description: "Just knowing you exist brings lightness to the heart. Your laughter, sincerity, and presence make every ordinary day feel extraordinary.",
+    badge: "PRECIOUS SOUL",
     bg: "#CCFF00",
     accent: "#FF0099",
   },
@@ -37,7 +36,7 @@ const TRIBUTES = [
     icon: Sun,
     title: "FOREVER HAPPY",
     subtitle: "Insha'Allah 🤲",
-    description: "May your journey ahead be blessed with good health, immense peace, boundless success, and smiles that never fade away.",
+    description: "May your journey ahead be blessed with radiant health, immense peace, boundless success, and happiness that stays with you forever.",
     badge: "ETERNAL DU'A",
     bg: "#FF0099",
     textColor: "#FFFFFF",
@@ -57,13 +56,13 @@ export default function KindnessCards() {
     <section className="mx-auto max-w-4xl px-5 py-14">
       <div className="text-center mb-10">
         <span className="inline-flex items-center gap-2 rounded-full border-3 border-black bg-[#CCFF00] px-4 py-1 font-display text-xs sm:text-sm tracking-widest text-black shadow-[4px_4px_0_0_#000]">
-          <Heart className="h-4 w-4 text-[#FF0099] fill-[#FF0099]" /> A TRIBUTE TO EXCELLENCE
+          <Heart className="h-4 w-4 text-[#FF0099] fill-[#FF0099]" /> A SINCERE TRIBUTE
         </span>
         <h2 className="mt-4 font-display text-3xl sm:text-6xl text-black leading-tight">
-          WHY SHE IS <span className="text-[#FF0099]">ONE OF A KIND</span>
+          WHY SHE IS <span className="text-[#FF0099]">THE MOST SPECIAL</span>
         </h2>
         <p className="mt-2 text-base sm:text-lg font-bold text-black/70 max-w-xl mx-auto">
-          A heartfelt recognition of the most beautiful soul, her unmatched kindness, and the laughter she brings.
+          A heartfelt recognition of the most beautiful soul, her unmatched kindness, and the peace she brings.
         </p>
       </div>
 

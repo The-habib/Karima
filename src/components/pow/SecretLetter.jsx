@@ -79,24 +79,21 @@ export default function SecretLetter() {
                     Dear Karima (Fultusi),
                   </p>
                   <p>
-                    Out of all the people in the world, you are truly <span className="bg-[#FF0099]/20 px-1 rounded font-extrabold">the most beautiful girl</span> and <span className="bg-[#CCFF00] px-1 rounded text-black font-extrabold">the kindest soul</span> I have ever known.
+                    Out of all the billions of people in the world, you are truly <span className="bg-[#FF0099]/20 px-1 rounded font-extrabold">the most beautiful girl</span> and <span className="bg-[#CCFF00] px-1 rounded text-black font-extrabold">the kindest soul</span> I have ever known.
                   </p>
                   <p>
-                    Your smile has a magic that can instantly turn a bad day into pure peace. Even when you tell me <span className="underline decoration-wavy decoration-[#FF0099]">“30 min por sms koro”</span> and reply 1.5 hours later, or delete your posts at lightning speed, every second spent talking to you is a blessing.
-                  </p>
-                  <p>
-                    I asked if anyone ever proposed to you in a filmy style 🎬 — but truth is, no movie script can match how genuinely special you are to me.
+                    Your smile has a gentle warmth that lights up everything around you. Your kind heart, your sincerity, and the way you care make you unforgettable.
                   </p>
                   <div className="rounded-2xl border-3 border-black bg-[#CCFF00]/40 p-4 font-extrabold text-[#1a0033]">
                     🤲 <span className="underline">My Deepest Prayer for You:</span><br />
-                    “I wish and pray that you will be happy forever, smiling through every moment of your life, Insha'Allah.”
+                    “I wish and pray from the bottom of my heart that you will be happy forever, surrounded by peace, good health, and blessings in every second of your life, Insha'Allah.”
                   </div>
                 </div>
 
                 <div className="mt-6 pt-4 border-t-3 border-black flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
                     <Heart className="h-5 w-5 text-red-500 fill-red-500 animate-bounce" />
-                    <span className="font-display text-sm">With endless admiration — Habib</span>
+                    <span className="font-display text-sm">Always praying for your happiness — Habib</span>
                   </div>
                   <PowButton onClick={toggleLetter} bg="#FF0099" color="#FFFFFF" className="text-xs py-2 px-4">
                     CLOSE LETTER
